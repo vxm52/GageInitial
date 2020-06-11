@@ -20,5 +20,5 @@ function logIn() {
   //cache
   var arrList = [];
   localStorage.setItem("collecting", JSON.stringify(arrList));
-  location.href = "search.html";
+  location.href = "main.html";
 }

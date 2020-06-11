@@ -1,4 +1,4 @@
-body{
+body {
     background: url(cake.jpg);
     background-size: cover;
     /* opacity: 0.5;
@@ -13,12 +13,11 @@ body{
     padding: 2.5em;
     margin: auto;
     width: 30%;
-    box-sizing: inherit;
     box-shadow: 0px 0px 15px #545454;
     text-align: center;
 }
 
-h1{
+h1 {
     font-family: system-ui;
     text-align:center;
     position: relative;
@@ -27,24 +26,28 @@ h1{
     color: #7a08fa;
 }
 
-h3{
+h2 {
+  color: #007aff;
+  text-align: left;
+}
+
+h3 {
   text-align: center;
   font-size: x-large;
 }
 
-p{
+p {
   font-family: 'Oswald', sans-serif;
   text-align:center;
   color: #A1A1A1;
 }
 
-.username, .password{
+.username, .password {
   background: #f0f0f0;
   border: none;
   font-weight: 400;
   outline: none;
   height: 23px;
-  text-align:center;
   position: relative;
 }
 
@@ -54,15 +57,15 @@ label .account {
 
 button {
   border: 0;
-  padding: 10px 20px;
+  padding: 5px 15px;
   display: inline-block;
   border-radius: 10px;
-  color: #007aff;
+  color: #7a08fa;
   font-size: 16px;
   font-family: "Arial Narrow";
   font-weight: bold;
-  background-color: #f2f2f7;
-  box-shadow: 0px 10px #007aff;
+  background-color: #f8ecfd;
+  box-shadow: 0px 7.5px #7a08fa;
 }
 
 button:hover {
@@ -71,6 +74,30 @@ button:hover {
 
 button:active {
   background-color: #8993B8;
-  box-shadow: 0 5px #8993B8;
-  transform: translateY(10px);
+  box-shadow: 0 1px #8993B8;
+  transform: translateY(6px);
+  outline: none;
+}
+
+button:focus {
+  outline: none;
+}
+
+
+/* Main page */
+.main-page-container {
+  width: 50%;
+}
+
+.feature-box {
+  text-align: center;
+  display: inline;
+  margin: 10px 0;
+}
+
+.classroom1, .classroom2, .classroom3, .addClassroom{
+  display: block;
+  margin: 10px auto;
+  text-align: center;
+  align-items: center;
 }
