@@ -1,6 +1,7 @@
 body {
     background: url(cake.jpg);
     background-size: cover;
+    text-align: center;
     /* opacity: 0.5;
     z-index: -1; */
   }
@@ -12,7 +13,7 @@ body {
     border-radius: 5px;
     padding: 2.5em;
     margin: auto;
-    width: 30%;
+    width: 15%;
     box-shadow: 0px 0px 15px #545454;
     text-align: center;
 }
@@ -42,6 +43,10 @@ p {
   color: #A1A1A1;
 }
 
+.userArea, .passArea {
+  text-align: left;
+}
+
 .username, .password {
   background: #f0f0f0;
   border: none;
@@ -49,6 +54,8 @@ p {
   outline: none;
   height: 23px;
   position: relative;
+  text-align: left;
+  width: 100%;
 }
 
 label .account {
@@ -88,6 +95,8 @@ button:focus {
 /* Main page */
 .main-page-container {
   width: 50%;
+  position: absolute;
+  left: 25%;
 }
 
 .feature-box {
@@ -105,6 +114,12 @@ button:focus {
 
 
 /* Inside Classrooms */
+.logOutButton {
+  position: absolute;
+  left: 7.5%;
+  top: 7.5%;
+}
+
 .card {
   margin: 30px 0px;
 }

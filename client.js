@@ -20,7 +20,7 @@ function logIn() {
   //cache
   var arrList = [];
   localStorage.setItem("collecting", JSON.stringify(arrList));
-  location.href = "main.html";
+  location.href = "classrooms.html";
 }
 
 
@@ -94,4 +94,9 @@ function backToHome()
       status.style.display = "none";
     }
   }
+}
+
+function logOut()
+{
+  location.href = "index.html";
 }
