@@ -10,35 +10,59 @@
   <body>
 
     <!-- Home page from wireframe -->
-    <div id="page1">
+    <div id="homePage" style="display: block">
       <div class="container main-page-container">
 
         <h1>Classrooms</h1>
         <div class="feature-box col-lg-2 col-md-4">
-          <button class="classroom1" onclick="viewClass1();">Class 1</button>
+          <button class="classroom1-btn" onclick="viewClass1();">Class 1</button>
         </div>
         <div class="feature-box col-lg-2 col-md-4">
-          <button class="classroom2" onclick="viewClass2();">Class 2</button>
+          <button class="classroom2-btn" onclick="viewClass2();">Class 2</button>
         </div>
         <div class="feature-box col-lg-2 col-md-4">
-          <button class="classroom3" onclick="viewClass3();">Class 3</button>
+          <button class="classroom3-btn" onclick="viewClass3();">Class 3</button>
         </div>
         <div class="feature-box col-lg-2 col-md-4">
-          <button class="addClassroom" onclick="addClassroom();">Add Class</button>
+          <button class="addClassroom-btn" onclick="addClassroom();">Add Class</button>
         </div>
 
       </div>
     </div>
 
 
-    <!-- Record Behavior Page from wireframe -->
-    <div class="class1Page" >
+    <!-- Record Behavior Page from wireframe (for each class) -->
+    <div id="class1Page" style="display: none;">
       <div class="container main-page-container">
         <h2>Class 1</h2>
 
+        <button class="backToHome" onclick="backToHome();">Back</button>
       </div>
     </div>
 
+    <div id="class2Page" style="display: none;">
+      <div class="container main-page-container">
+        <h2>Class 2</h2>
+
+        <button class="backToHome" onclick="backToHome();">Back</button>
+      </div>
+    </div>
+
+    <div id="class3Page" style="display: none;">
+      <div class="container main-page-container">
+        <h2>Class 3</h2>
+
+        <button class="backToHome" onclick="backToHome();">Back</button>
+      </div>
+    </div>
+
+      <div id="addClassroomPage" style="display: none;">
+        <div class="container main-page-container">
+          <h2>Add Class</h2>
+
+        <button class="backToHome" onclick="backToHome();">Back</button>
+        </div>
+      </div>
 
 
   <script src="client.js" charset="utf-8"></script>

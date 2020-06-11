@@ -95,7 +95,7 @@ button:focus {
   margin: 10px 0;
 }
 
-.classroom1, .classroom2, .classroom3, .addClassroom{
+.classroom1-btn, .classroom2-btn, .classroom3-btn, .addClassroom-btn{
   display: block;
   margin: 10px auto;
   text-align: center;
