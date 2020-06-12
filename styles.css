@@ -149,8 +149,8 @@ button:focus {
 }
 
 .outOfSeat, .talkedOutOfTurn, .staredAway, .addBehaviour, .commentA, .calendarA, .insightsA {
-  padding: 3px 10px;
-  font-size: 12px;
+  /* padding: 3px 10px; */
+  font-size: 14px;
   width: 75px;
   height: 75px;
   margin: 10px;
@@ -171,4 +171,5 @@ button:focus {
   width: 100%;
   height: 75px;
   margin-left: 0px;
+  font-size: 16px;
 }
