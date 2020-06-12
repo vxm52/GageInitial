@@ -1,222 +1,404 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Classrooms</title>
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" href="styles.css">
-  </head>
-  <body>
+<head>
+  <meta charset="utf-8">
+  <title>Classrooms</title>
 
-    <!-- Home page from wireframe -->
-    <div id="homePage" style="display: block">
-      <div class="container main-page-container">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link rel="stylesheet" href="styles.css">
+</head>
 
-        <button class="logOutButton" onclick="logOut();">Log out</button>
-        <h1 class="classroomHeader">Classrooms</h1>
+<body>
 
-        <div class="feature-box col-lg-2 col-md-4">
-          <button class="classroom1-btn" onclick="viewClass1();">Class 1</button>
-        </div>
-        <div class="feature-box col-lg-2 col-md-4">
-          <button class="classroom2-btn" onclick="viewClass2();">Class 2</button>
-        </div>
-        <div class="feature-box col-lg-2 col-md-4">
-          <button class="classroom3-btn" onclick="viewClass3();">Class 3</button>
-        </div>
-        <div class="feature-box col-lg-2 col-md-4">
-          <button class="addClassroom-btn" onclick="addClassroom();">Add Class</button>
-        </div>
+  <!-- Home page from wireframe -->
+  <div id="homePage" style="display: block">
+    <div class="container main-page-container">
 
+      <button class="logOutButton" onclick="logOut();">Log out</button>
+      <h1 class="classroomHeader">Classrooms</h1>
+
+      <div class="feature-box col-lg-2 col-md-4">
+        <button class="classroom1-btn" onclick="viewClass1();">Class 1</button>
       </div>
+      <div class="feature-box col-lg-2 col-md-4">
+        <button class="classroom2-btn" onclick="viewClass2();">Class 2</button>
+      </div>
+      <div class="feature-box col-lg-2 col-md-4">
+        <button class="classroom3-btn" onclick="viewClass3();">Class 3</button>
+      </div>
+      <div class="feature-box col-lg-2 col-md-4">
+        <button class="addClassroom-btn" onclick="addClassroom();">Add Class</button>
+      </div>
+
     </div>
+  </div>
 
 
-    <!-- Record Behavior Page from wireframe (for each class) -->
-    <div id="class1Page" style="display: none;">
-      <div class="container main-page-container">
-        <h2>Class 1</h2>
-        <div class="row">
+  <!-- Class 1 Page (Record behavior = default tab) -->
+  <div id="class1Page" style="display: none;">
+    <div class="container main-page-container">
+      <h2>Class 1</h2>
 
-              <div class="pricing-column col-lg-4 col-md-6">
-                <div class="card">
-                  <div class="card-header">
-                    <h3>Johnny Ricka</h3>
-                  </div>
+      <div class="w3-bar w3-black tabButtons">
+        <button id="recordBehaviorButton1" class="w3-bar-item w3-button  selectedTab" onclick="openTab('recordBehaviorTab1')">Record Behavior</button>
+        <button id="studentListButton1" class="w3-bar-item w3-button" onclick="openTab('studentListTab1')">Student List</button>
+      </div>
 
-                  <div class="card-body grid-container">
-                    <button class="grid-item outOfSeat">Out of Seat</button>
-                    <button class="grid-item talkedOutOfTurn">Talked Out of Turn</button>
-                    <button class="grid-item staredAway">Stared Away</button>
-                    <button class="addBehaviour">+</button>
-                  </div>
+      <!-- Class 1 Record Behavior Tab Contents -->
+      <div id="recordBehaviorTab1" class="row tab">
 
-                </div>
-              </div>
-
-              <div class="pricing-column col-lg-4 col-md-6">
-                <div class="card">
-                  <div class="card-header">
-                    <h3>Kylee Okei</h3>
-                  </div>
-
-                  <div class="card-body grid-container">
-                    <button class="grid-item outOfSeat">Out of Seat</button>
-                    <button class="grid-item talkedOutOfTurn">Talked Out of Turn</button>
-                    <button class="grid-item staredAway">Stared Away</button>
-                    <button class="addBehaviour">+</button>
-                  </div>
-
-                </div>
-              </div>
-
-              <div class="pricing-column col-lg-4 col-md-12">
-                <div class="card">
-                  <div class="card-header">
-                    <h3>Oden Odentra</h3>
-                  </div>
-
-                  <div class="card-body grid-container">
-                    <button class="grid-item outOfSeat">Out of Seat</button>
-                    <button class="grid-item talkedOutOfTurn">Talked Out of Turn</button>
-                    <button class="grid-item staredAway">Stared Away</button>
-                    <button class="addBehaviour">+</button>
-                  </div>
-
-                </div>
-              </div>
-
+        <div class="pricing-column col-lg-4 col-md-6">
+          <div class="card">
+            <div class="card-header">
+              <h3>Johnny Ricka</h3>
             </div>
-        <button class="backToHome" onclick="backToHome();">Back</button>
-      </div>
-    </div>
 
-    <div id="class2Page" style="display: none;">
-      <div class="container main-page-container">
-        <h2>Class 2</h2>
-        <div class="row">
-
-              <div class="pricing-column col-lg-4 col-md-6">
-                <div class="card">
-                  <div class="card-header">
-                    <h3>Samuel L. Jackson</h3>
-                  </div>
-
-                  <div class="card-body grid-container">
-                    <button class="grid-item outOfSeat">Out of Seat</button>
-                    <button class="grid-item talkedOutOfTurn">Talked Out of Turn</button>
-                    <button class="grid-item staredAway">Stared Away</button>
-                    <button class="addBehaviour">+</button>
-                  </div>
-
-                </div>
-              </div>
-
-              <div class="pricing-column col-lg-4 col-md-6">
-                <div class="card">
-                  <div class="card-header">
-                    <h3>Jackson Maxon Flaxon Waxon</h3>
-                  </div>
-
-                  <div class="card-body grid-container">
-                    <button class="grid-item outOfSeat">Out of Seat</button>
-                    <button class="grid-item talkedOutOfTurn">Talked Out of Turn</button>
-                    <button class="grid-item staredAway">Stared Away</button>
-                    <button class="addBehaviour">+</button>
-                  </div>
-
-                </div>
-              </div>
-
-              <div class="pricing-column col-lg-4 col-md-12">
-                <div class="card">
-                  <div class="card-header">
-                    <h3>Cristiano Ronaldo</h3>
-                  </div>
-
-                  <div class="card-body grid-container">
-                    <button class="grid-item outOfSeat">Out of Seat</button>
-                    <button class="grid-item talkedOutOfTurn">Talked Out of Turn</button>
-                    <button class="grid-item staredAway">Stared Away</button>
-                    <button class="addBehaviour">+</button>
-                  </div>
-
-                </div>
-              </div>
-
+            <div class="card-body grid-container">
+              <button class="grid-item outOfSeat">Out of Seat</button>
+              <button class="grid-item talkedOutOfTurn">Talked Out of Turn</button>
+              <button class="grid-item staredAway">Stared Away</button>
+              <button class="addBehaviour">+</button>
             </div>
-        <button class="backToHome" onclick="backToHome();">Back</button>
-      </div>
-    </div>
 
-    <div id="class3Page" style="display: none;">
-      <div class="container main-page-container">
-        <h2>Class 3</h2>
-        <div class="row">
+          </div>
+        </div>
 
-              <div class="pricing-column col-lg-4 col-md-6">
-                <div class="card">
-                  <div class="card-header">
-                    <h3>Soulja Boy</h3>
-                  </div>
-
-                  <div class="card-body grid-container">
-                    <button class="grid-item outOfSeat">Out of Seat</button>
-                    <button class="grid-item talkedOutOfTurn">Talked Out of Turn</button>
-                    <button class="grid-item staredAway">Stared Away</button>
-                    <button class="addBehaviour">+</button>
-                  </div>
-
-                </div>
-              </div>
-
-              <div class="pricing-column col-lg-4 col-md-6">
-                <div class="card">
-                  <div class="card-header">
-                    <h3>Tupac</h3>
-                  </div>
-
-                  <div class="card-body grid-container">
-                    <button class="grid-item outOfSeat">Out of Seat</button>
-                    <button class="grid-item talkedOutOfTurn">Talked Out of Turn</button>
-                    <button class="grid-item staredAway">Stared Away</button>
-                    <button class="addBehaviour">+</button>
-                  </div>
-
-                </div>
-              </div>
-
-              <div class="pricing-column col-lg-4 col-md-12">
-                <div class="card">
-                  <div class="card-header">
-                    <h3>Biggie</h3>
-                  </div>
-
-                  <div class="card-body grid-container">
-                    <button class="grid-item outOfSeat">Out of Seat</button>
-                    <button class="grid-item talkedOutOfTurn">Talked Out of Turn</button>
-                    <button class="grid-item staredAway">Stared Away</button>
-                    <button class="addBehaviour">+</button>
-                  </div>
-
-                </div>
-              </div>
-
+        <div class="pricing-column col-lg-4 col-md-6">
+          <div class="card">
+            <div class="card-header">
+              <h3>Kylee Okei</h3>
             </div>
-        <button class="backToHome" onclick="backToHome();">Back</button>
-      </div>
-    </div>
 
-      <div id="addClassroomPage" style="display: none;">
-        <div class="container main-page-container">
-          <h2>Add Class</h2>
+            <div class="card-body grid-container">
+              <button class="grid-item outOfSeat">Out of Seat</button>
+              <button class="grid-item talkedOutOfTurn">Talked Out of Turn</button>
+              <button class="grid-item staredAway">Stared Away</button>
+              <button class="addBehaviour">+</button>
+            </div>
 
-        <button class="backToHome" onclick="backToHome();">Back</button>
+          </div>
+        </div>
+
+        <div class="pricing-column col-lg-4 col-md-12">
+          <div class="card">
+            <div class="card-header">
+              <h3>Oden Odentra</h3>
+            </div>
+
+            <div class="card-body grid-container">
+              <button class="grid-item outOfSeat">Out of Seat</button>
+              <button class="grid-item talkedOutOfTurn">Talked Out of Turn</button>
+              <button class="grid-item staredAway">Stared Away</button>
+              <button class="addBehaviour">+</button>
+            </div>
+
+          </div>
         </div>
       </div>
+      <!-- End of Class 1Record Behavior Tab -->
+
+      <!-- Class 1 Student List Tab Contents -->
+      <div id="studentListTab1" class="row tab" style="display:none">
+
+        <div class="pricing-column col-lg-4 col-md-6">
+          <div class="card">
+            <div class="card-header">
+              <h3>Johnny Ricka</h3>
+            </div>
+
+            <div class="card-body">
+              <button class="commentA">Comment Submission</button>
+              <button class="calendarA">Calendar</button>
+              <button class="insightsA">Insights</button>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="pricing-column col-lg-4 col-md-6">
+          <div class="card">
+            <div class="card-header">
+              <h3>Kylee Okei</h3>
+            </div>
+
+            <div class="card-body">
+              <button class="commentA">Comment Submission</button>
+              <button class="calendarA">Calendar</button>
+              <button class="insightsA">Insights</button>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="pricing-column col-lg-4 col-md-12">
+          <div class="card">
+            <div class="card-header">
+              <h3>Oden Odentra</h3>
+            </div>
+
+            <div class="card-body">
+              <button class="commentA">Comment Submission</button>
+              <button class="calendarA">Calendar</button>
+              <button class="insightsA">Insights</button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <!-- End of Class 1 Student List Tab -->
+
+      <button class="backToHome" onclick="backToHome();">Back</button>
+    </div>
+  </div>
 
 
+  <!-- Class 2 Page -->
+  <div id="class2Page" style="display: none;">
+    <div class="container main-page-container">
+      <h2>Class 2</h2>
+      <div class="w3-bar w3-black tabButtons">
+        <button id="recordBehaviorButton2" class="w3-bar-item w3-button  selectedTab" onclick="openTab('recordBehaviorTab2')">Record Behavior</button>
+        <button id="studentListButton2" class="w3-bar-item w3-button" onclick="openTab('studentListTab2')">Student List</button>
+      </div>
+
+      <!-- Class 2 Record Behavior Tab Contents -->
+      <div id="recordBehaviorTab2" class="row tab">
+
+        <div class="pricing-column col-lg-4 col-md-6">
+          <div class="card">
+            <div class="card-header">
+              <h3>Samuel L. Jackson</h3>
+            </div>
+
+            <div class="card-body grid-container">
+              <button class="grid-item outOfSeat">Out of Seat</button>
+              <button class="grid-item talkedOutOfTurn">Talked Out of Turn</button>
+              <button class="grid-item staredAway">Stared Away</button>
+              <button class="addBehaviour">+</button>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="pricing-column col-lg-4 col-md-6">
+          <div class="card">
+            <div class="card-header">
+              <h3>Jackson Maxon Flaxon Waxon</h3>
+            </div>
+
+            <div class="card-body grid-container">
+              <button class="grid-item outOfSeat">Out of Seat</button>
+              <button class="grid-item talkedOutOfTurn">Talked Out of Turn</button>
+              <button class="grid-item staredAway">Stared Away</button>
+              <button class="addBehaviour">+</button>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="pricing-column col-lg-4 col-md-12">
+          <div class="card">
+            <div class="card-header">
+              <h3>Cristiano Ronaldo</h3>
+            </div>
+
+            <div class="card-body grid-container">
+              <button class="grid-item outOfSeat">Out of Seat</button>
+              <button class="grid-item talkedOutOfTurn">Talked Out of Turn</button>
+              <button class="grid-item staredAway">Stared Away</button>
+              <button class="addBehaviour">+</button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <!-- End of Class 2 Record Behavior Tab -->
+
+      <!-- Class 2 Student List Tab Contents -->
+      <div id="studentListTab2" class="row tab" style="display:none">
+
+        <div class="pricing-column col-lg-4 col-md-6">
+          <div class="card">
+            <div class="card-header">
+              <h3>Samuel L. Jackson</h3>
+            </div>
+
+            <div class="card-body">
+              <button class="commentA">Comment Submission</button>
+              <button class="calendarA">Calendar</button>
+              <button class="insightsA">Insights</button>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="pricing-column col-lg-4 col-md-6">
+          <div class="card">
+            <div class="card-header">
+              <h3>Jackson Maxon Flaxon Waxon</h3>
+            </div>
+
+            <div class="card-body">
+              <button class="commentA">Comment Submission</button>
+              <button class="calendarA">Calendar</button>
+              <button class="insightsA">Insights</button>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="pricing-column col-lg-4 col-md-12">
+          <div class="card">
+            <div class="card-header">
+              <h3>Cristiano Ronaldo</h3>
+            </div>
+
+            <div class="card-body">
+              <button class="commentA">Comment Submission</button>
+              <button class="calendarA">Calendar</button>
+              <button class="insightsA">Insights</button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <!-- End of Class 2 Student List Tab -->
+
+      <button class="backToHome" onclick="backToHome();">Back</button>
+    </div>
+  </div>
+  </div>
+
+
+
+  <!-- Class 3 Page -->
+  <div id="class3Page" style="display: none;">
+    <div class="container main-page-container">
+      <h2>Class 3</h2>
+
+      <div class="w3-bar w3-black tabButtons">
+        <button id="recordBehaviorButton3" class="w3-bar-item w3-button  selectedTab" onclick="openTab('recordBehaviorTab3')">Record Behavior</button>
+        <button id="studentListButton3" class="w3-bar-item w3-button" onclick="openTab('studentListTab3')">Student List</button>
+      </div>
+
+      <!-- Class 1 Record Behavior Tab Contents -->
+      <div id="recordBehaviorTab3" class="row tab">
+
+        <div class="pricing-column col-lg-4 col-md-6">
+          <div class="card">
+            <div class="card-header">
+              <h3>Soulja Boy</h3>
+            </div>
+
+            <div class="card-body grid-container">
+              <button class="grid-item outOfSeat">Out of Seat</button>
+              <button class="grid-item talkedOutOfTurn">Talked Out of Turn</button>
+              <button class="grid-item staredAway">Stared Away</button>
+              <button class="addBehaviour">+</button>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="pricing-column col-lg-4 col-md-6">
+          <div class="card">
+            <div class="card-header">
+              <h3>Tupac</h3>
+            </div>
+
+            <div class="card-body grid-container">
+              <button class="grid-item outOfSeat">Out of Seat</button>
+              <button class="grid-item talkedOutOfTurn">Talked Out of Turn</button>
+              <button class="grid-item staredAway">Stared Away</button>
+              <button class="addBehaviour">+</button>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="pricing-column col-lg-4 col-md-12">
+          <div class="card">
+            <div class="card-header">
+              <h3>Biggie</h3>
+            </div>
+
+            <div class="card-body grid-container">
+              <button class="grid-item outOfSeat">Out of Seat</button>
+              <button class="grid-item talkedOutOfTurn">Talked Out of Turn</button>
+              <button class="grid-item staredAway">Stared Away</button>
+              <button class="addBehaviour">+</button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <!-- End of Class 3 Record Behavior Tab -->
+
+      <!-- Class 3 Student List Tab Contents -->
+      <div id="studentListTab3" class="row tab" style="display:none">
+
+        <div class="pricing-column col-lg-4 col-md-6">
+          <div class="card">
+            <div class="card-header">
+              <h3>Soulja Boy</h3>
+            </div>
+
+            <div class="card-body">
+              <button class="commentA">Comment Submission</button>
+              <button class="calendarA">Calendar</button>
+              <button class="insightsA">Insights</button>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="pricing-column col-lg-4 col-md-6">
+          <div class="card">
+            <div class="card-header">
+              <h3>Tupac</h3>
+            </div>
+
+            <div class="card-body">
+              <button class="commentA">Comment Submission</button>
+              <button class="calendarA">Calendar</button>
+              <button class="insightsA">Insights</button>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="pricing-column col-lg-4 col-md-12">
+          <div class="card">
+            <div class="card-header">
+              <h3>Biggie</h3>
+            </div>
+
+            <div class="card-body">
+              <button class="commentA">Comment Submission</button>
+              <button class="calendarA">Calendar</button>
+              <button class="insightsA">Insights</button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <!-- End of Class 3 Student List Tab -->
+      <button class="backToHome" onclick="backToHome();">Back</button>
+    </div>
+  </div>
+  </div>
+
+  <div id="addClassroomPage" style="display: none;">
+    <div class="container main-page-container">
+      <h2>Add Class</h2>
+
+      <button class="backToHome" onclick="backToHome();">Back</button>
+    </div>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="client.js" charset="utf-8"></script>
-  </body>
+</body>
+
 </html>

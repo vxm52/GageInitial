@@ -50,6 +50,7 @@ function viewClass2()
   {
       cr2.style.display = "block"; //Sets visible on. Cancels the initial "none" style display setting of page 2 div in HTML
       hp.style.display = "none"; //Sets visible off. Sets display style to "none" for page 1 div in HTML
+      document.getElementById("recordBehaviorTab2").style.display = ""
   }
 }
 
@@ -62,6 +63,7 @@ function viewClass3()
   {
       cr3.style.display = "block"; //Sets visible on. Cancels the initial "none" style display setting of page 2 div in HTML
       hp.style.display = "none"; //Sets visible off. Sets display style to "none" for page 1 div in HTML
+      document.getElementById("recordBehaviorTab3").style.display = ""
   }
 }
 
@@ -99,4 +101,45 @@ function backToHome()
 function logOut()
 {
   location.href = "index.html";
+}
+
+function openTab(tabName) {
+  var i;
+  var x = document.getElementsByClassName("tab");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  document.getElementById(tabName).style.display = "";
+  if(tabName == "studentListTab1")
+  {
+    document.getElementById("studentListButton1").classList.add("selectedTab");
+    document.getElementById("recordBehaviorButton1").classList.remove("selectedTab");
+  }
+  else if(tabName == "recordBehaviorTab1")
+  {
+    document.getElementById("recordBehaviorButton1").classList.add("selectedTab");
+    document.getElementById("studentListButton1").classList.remove("selectedTab");
+  }
+
+  if(tabName == "studentListTab2")
+  {
+    document.getElementById("studentListButton2").classList.add("selectedTab");
+    document.getElementById("recordBehaviorButton2").classList.remove("selectedTab");
+  }
+  else if(tabName == "recordBehaviorTab2")
+  {
+    document.getElementById("recordBehaviorButton2").classList.add("selectedTab");
+    document.getElementById("studentListButton2").classList.remove("selectedTab");
+  }
+
+  if(tabName == "studentListTab3")
+  {
+    document.getElementById("studentListButton3").classList.add("selectedTab");
+    document.getElementById("recordBehaviorButton3").classList.remove("selectedTab");
+  }
+  else if(tabName == "recordBehaviorTab3")
+  {
+    document.getElementById("recordBehaviorButton3").classList.add("selectedTab");
+    document.getElementById("studentListButton3").classList.remove("selectedTab");
+  }
 }
