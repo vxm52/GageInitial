@@ -16,6 +16,8 @@ body {
     width: 15%;
     box-shadow: 0px 0px 15px #545454;
     text-align: center;
+    position: absolute;
+    top: 5%;
 }
 
 h1 {
@@ -37,10 +39,10 @@ h3 {
   font-size: x-large;
 }
 
-p {
+p, label {
   font-family: 'Oswald', sans-serif;
   text-align:center;
-  color: #A1A1A1;
+  color: #767676;
 }
 
 .userArea, .passArea {
@@ -91,6 +93,18 @@ button:focus {
   outline: none;
 }
 
+.sidebar {
+    background-color: #424874;
+    /* border: dashed; */
+    /* border-color: #a0aeba; */
+    width: 8%;
+    box-shadow: 0px 0px 2px #545454;
+    height: 1000px;
+}
+
+.siderect{
+   position: relative;
+}
 
 /* Main page */
 .main-page-container {
@@ -115,9 +129,8 @@ button:focus {
 
 /* Inside Classrooms */
 .logOutButton {
-  position: absolute;
-  left: 7.5%;
-  top: 7.5%;
+  position: relative;
+  top: 5%;
 }
 
 .tabButtons {
@@ -143,20 +156,25 @@ button:focus {
 .grid-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  padding: 10px;
+  /* padding: 10px; */
   text-align: center;
-  padding-left: 30px;
+  /* padding-left: ; */
 }
 
 .outOfSeat, .talkedOutOfTurn, .staredAway, .addBehaviour, .commentA, .calendarA, .insightsA {
   /* padding: 3px 10px; */
-  font-size: 14px;
-  width: 75px;
-  height: 75px;
+  font-size: 12px;
+  width: 75%;
+  height: 75%;
   margin: 10px;
   color: #007aff;
   background-color: #F1F8FF;
   box-shadow: 0px 7.5px #007aff;
+}
+
+.counter {
+  text-align: center;
+  padding-top: 30%;
 }
 
 .addBehaviour {
@@ -169,7 +187,11 @@ button:focus {
   background-color: #C7FFAE;
   box-shadow: 0px 7.5px #37AF00;
   width: 100%;
-  height: 75px;
+  height: 75%;
   margin-left: 0px;
   font-size: 16px;
+}
+
+.commentA:hover, .calendarA:hover, .insightsA:hover {
+  background-color: #9FFF75;
 }
