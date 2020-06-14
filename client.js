@@ -25,8 +25,6 @@ function logIn() {
 
 
 
-
-
 // Page traversals
 
 function viewClass1()
@@ -233,22 +231,3 @@ function addStaredAway(studentName) {
   document.getElementById("staredAway-count-" + studentName.varName).innerHTML= "" + studentName.staredAway;
 }
 displayStudentName();
-//Talked Out Of Turn Counter
-var count2 = (function() {
-  var counterTalk = 0;
-  return function () {return counterTalk +=1;}
-})();
-
-function displaycount2A() {
-  document.getElementById("clickcarrier2").innerHTML= count2();
-}
-
-//Stared Away Counter
-var count3 = (function() {
-  var counterStare = 0;
-  return function () {return counterStare +=1;}
-})();
-
-function displaycount3A() {
-  document.getElementById("clickcarrier3").innerHTML= count3();
-}
