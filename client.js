@@ -38,6 +38,7 @@ function viewClass1()
   {
       cr1.style.display = "block"; //Sets visible on. Cancels the initial "none" style display setting of page 2 div in HTML
       hp.style.display = "none"; //Sets visible off. Sets display style to "none" for page 1 div in HTML
+      document.getElementById("recordBehaviorTab1").style.display = "";
   }
 }
 
@@ -50,7 +51,7 @@ function viewClass2()
   {
       cr2.style.display = "block"; //Sets visible on. Cancels the initial "none" style display setting of page 2 div in HTML
       hp.style.display = "none"; //Sets visible off. Sets display style to "none" for page 1 div in HTML
-      document.getElementById("recordBehaviorTab2").style.display = ""
+      document.getElementById("recordBehaviorTab2").style.display = "";
   }
 }
 
@@ -63,7 +64,7 @@ function viewClass3()
   {
       cr3.style.display = "block"; //Sets visible on. Cancels the initial "none" style display setting of page 2 div in HTML
       hp.style.display = "none"; //Sets visible off. Sets display style to "none" for page 1 div in HTML
-      document.getElementById("recordBehaviorTab3").style.display = ""
+      document.getElementById("recordBehaviorTab3").style.display = "";
   }
 }
 
@@ -142,4 +143,112 @@ function openTab(tabName) {
     document.getElementById("recordBehaviorButton3").classList.add("selectedTab");
     document.getElementById("studentListButton3").classList.remove("selectedTab");
   }
+}
+
+// **********   BEHAVIOR COUNTERS  *************//
+//
+// //Out of Seat Counter
+//
+// //Create one dimensional array
+// var p = new Array(2);
+//
+// //Loop to create 2D array using 1D array
+// for (var i = 0; i < p.length; i++)
+// {
+//   p[j] = new Array(2);
+// }
+//
+// var h = 0;
+//
+// //Loop to create 2D array elements
+// for (var i = 0; i < 2; i++)
+// {
+//   for (var j = 0; j < 2>; j++)
+//   {
+//     p[i][j] = h++;
+//   }
+// }
+
+
+function student (varName, name, classNumber, outOfSeat, talkedOutOfTurn, staredAway)
+{
+  this.varName = varName;
+  this.name = name;
+  this.classNumber= classNumber;
+  this.outOfSeat = outOfSeat;
+  this.talkedOutOfTurn = talkedOutOfTurn;
+  this.staredAway = staredAway;
+}
+
+var studentArray = [];
+
+var johnnyRicka = new student ("johnnyRicka", "Johnny Ricka", 1, 0, 0, 0);
+studentArray.push(johnnyRicka);
+var kyleeOkei = new student ("kyleeOkei", "Kylee Okei", 1, 0, 0, 0);
+studentArray.push(kyleeOkei);
+var odenOdentra = new student ("odenOdentra", "Oden Odentra", 1, 0, 0, 0);
+studentArray.push(odenOdentra);
+
+var samuelJackson = new student ("samuelJackson", "Samuel L. Jackson", 2, 0, 0, 0);
+studentArray.push(samuelJackson);
+var alaska = new student ("alaska", "Alaska", 2, 0, 0, 0);
+studentArray.push(alaska);
+var cristianoRonaldo = new student ("cristianoRonaldo", "CristianRonaldo", 2, 0, 0, 0);
+studentArray.push(cristianoRonaldo);
+
+var souljaBoy = new student ("souljaBoy", "Soulja Boy", 3, 0, 0, 0);
+studentArray.push(souljaBoy);
+var tupac = new student ("tupac", "Tupac", 3, 0, 0, 0);
+studentArray.push(tupac);
+var biggie = new student ("biggie", "Biggie", 3, 0, 0, 0);
+studentArray.push(biggie);
+
+
+//Loop for displaying student's names on card header
+
+function displayStudentName()
+{
+  for (var i = 0; i < student.length; i++)
+  {
+    document.getElementsByClassName("student" + (i + 1))[0].innerHTML = "" + studentArray[i].name;
+  }
+}
+
+
+function addOutOfSeat(studentName) {
+  studentName.outOfSeat++; //Add to counter
+  console.log(studentName.outOfSeat);
+  document.getElementById("outOfSeat-count-" + studentName.varName).innerHTML= "" + studentName.outOfSeat;
+}
+
+function addTalkedOutOfTurn(studentName) {
+  studentName.talkedOutOfTurn++; //Add to counter
+  console.log(studentName.talkedOutOfTurn);
+  document.getElementById("talkedOutOfTurn-count-" + studentName.varName).innerHTML= "" + studentName.talkedOutOfTurn;
+}
+
+function addStaredAway(studentName) {
+  studentName.staredAway++; //Add to counter
+  console.log(studentName.staredAway);
+  document.getElementById("staredAway-count-" + studentName.varName).innerHTML= "" + studentName.staredAway;
+}
+displayStudentName();
+//Talked Out Of Turn Counter
+var count2 = (function() {
+  var counterTalk = 0;
+  return function () {return counterTalk +=1;}
+})();
+
+function displaycount2A() {
+  document.getElementById("clickcarrier2").innerHTML= count2();
+}
+
+//Stared Away Counter
+var count3 = (function() {
+  var counterStare = 0;
+  return function () {return counterStare +=1;}
+})();
+
+function displaycount3A() {
+  document.getElementById("clickcarrier3").innerHTML= count3();
 }

@@ -15,7 +15,7 @@
   <div id="homePage" style="display: block">
     <div class="container main-page-container">
 
-      <button class="logOutButton" onclick="logOut();">Log out</button>
+      <!-- <button class="logOutButton" onclick="logOut();">Log out</button> -->
       <h1 class="classroomHeader">Classrooms</h1>
 
       <div class="feature-box col-lg-2 col-md-4">
@@ -36,6 +36,13 @@
 
 
   <!-- Class 1 Page (Record behavior = default tab) -->
+  <div class="sidebar">
+    <rect class="siderect">
+
+      <button class="logOutButton" onclick="logOut();">Log out</button>
+    </rect>
+
+  </div>
   <div id="class1Page" style="display: none;">
     <div class="container main-page-container">
       <h2>Class 1</h2>
@@ -51,13 +58,16 @@
         <div class="pricing-column col-lg-4 col-md-6">
           <div class="card">
             <div class="card-header">
-              <h3>Johnny Ricka</h3>
+              <h3 class="student1">Student 1</h3>
             </div>
 
             <div class="card-body grid-container">
-              <button class="grid-item outOfSeat">Out of Seat</button>
-              <button class="grid-item talkedOutOfTurn">Talked Out of Turn</button>
-              <button class="grid-item staredAway">Stared Away</button>
+              <button class="grid-item outOfSeat" onclick="addOutOfSeat(johnnyRicka);">Out of Seat</button>
+              <p class="counter" id="outOfSeat-count-johnnyRicka">0</p>
+              <button class="grid-item talkedOutOfTurn" onclick="addTalkedOutOfTurn(johnnyRicka);">Talked Out of Turn</button>
+              <p class="counter" id="talkedOutOfTurn-count-johnnyRicka">0</p>
+              <button class="grid-item staredAway" onclick="addStaredAway(johnnyRicka);">Stared Away</button>
+              <p class="counter" id="staredAway-count-johnnyRicka">0</p>
               <button class="addBehaviour">+</button>
             </div>
 
@@ -67,13 +77,16 @@
         <div class="pricing-column col-lg-4 col-md-6">
           <div class="card">
             <div class="card-header">
-              <h3>Kylee Okei</h3>
+              <h3 class="student2">Student 2</h3>
             </div>
 
             <div class="card-body grid-container">
-              <button class="grid-item outOfSeat">Out of Seat</button>
-              <button class="grid-item talkedOutOfTurn">Talked Out of Turn</button>
-              <button class="grid-item staredAway">Stared Away</button>
+              <button class="grid-item outOfSeat" onclick="addOutOfSeat(kyleeOkei);">Out of Seat</button>
+              <p class="counter" id="outOfSeat-count-kyleeOkei">0</p>
+              <button class="grid-item talkedOutOfTurn" onclick="addTalkedOutOfTurn(kyleeOkei);">Talked Out of Turn</button>
+              <p class="counter" id="talkedOutOfTurn-count-kyleeOkei">0</p>
+              <button class="grid-item staredAway" onclick="addStaredAway(kyleeOkei);">Stared Away</button>
+              <p class="counter" id="staredAway-count-kyleeOkei">0</p>
               <button class="addBehaviour">+</button>
             </div>
 
@@ -83,16 +96,18 @@
         <div class="pricing-column col-lg-4 col-md-12">
           <div class="card">
             <div class="card-header">
-              <h3>Oden Odentra</h3>
+              <h3 class="student3">Student 3</h3>
             </div>
 
             <div class="card-body grid-container">
-              <button class="grid-item outOfSeat">Out of Seat</button>
-              <button class="grid-item talkedOutOfTurn">Talked Out of Turn</button>
-              <button class="grid-item staredAway">Stared Away</button>
+              <button class="grid-item outOfSeat" onclick="addOutOfSeat(odenOdentra);">Out of Seat</button>
+              <p class="counter" id="outOfSeat-count-odenOdentra">0</p>
+              <button class="grid-item talkedOutOfTurn" onclick="addTalkedOutOfTurn(odenOdentra);">Talked Out of Turn</button>
+              <p class="counter" id="talkedOutOfTurn-count-odenOdentra">0</p>
+              <button class="grid-item staredAway" onclick="addStaredAway(odenOdentra);">Stared Away</button>
+              <p class="counter" id="staredAway-count-odenOdentra">0</p>
               <button class="addBehaviour">+</button>
             </div>
-
           </div>
         </div>
       </div>
@@ -104,7 +119,7 @@
         <div class="pricing-column col-lg-4 col-md-6">
           <div class="card">
             <div class="card-header">
-              <h3>Johnny Ricka</h3>
+              <h3 class="student1">Student 1</h3>
             </div>
 
             <div class="card-body">
@@ -119,7 +134,7 @@
         <div class="pricing-column col-lg-4 col-md-6">
           <div class="card">
             <div class="card-header">
-              <h3>Kylee Okei</h3>
+              <h3 class="student2">Student 2</h3>
             </div>
 
             <div class="card-body">
@@ -134,7 +149,7 @@
         <div class="pricing-column col-lg-4 col-md-12">
           <div class="card">
             <div class="card-header">
-              <h3>Oden Odentra</h3>
+              <h3 class="student3">Student 3</h3>
             </div>
 
             <div class="card-body">
@@ -154,6 +169,7 @@
 
 
   <!-- Class 2 Page -->
+
   <div id="class2Page" style="display: none;">
     <div class="container main-page-container">
       <h2>Class 2</h2>
@@ -168,13 +184,16 @@
         <div class="pricing-column col-lg-4 col-md-6">
           <div class="card">
             <div class="card-header">
-              <h3>Samuel L. Jackson</h3>
+              <h3 class="student1">Student 1</h3>
             </div>
 
             <div class="card-body grid-container">
-              <button class="grid-item outOfSeat">Out of Seat</button>
-              <button class="grid-item talkedOutOfTurn">Talked Out of Turn</button>
-              <button class="grid-item staredAway">Stared Away</button>
+              <button class="grid-item outOfSeat" onclick="addOutOfSeat(samuelJackson);">Out of Seat</button>
+              <p class="counter" id="outOfSeat-count-samuelJackson">0</p>
+              <button class="grid-item talkedOutOfTurn" onclick="addTalkedOutOfTurn(samuelJackson);">Talked Out of Turn</button>
+              <p class="counter" id="talkedOutOfTurn-count-samuelJackson">0</p>
+              <button class="grid-item staredAway" onclick="addStaredAway(samuelJackson);">Stared Away</button>
+              <p class="counter" id="staredAway-count-samuelJackson">0</p>
               <button class="addBehaviour">+</button>
             </div>
 
@@ -184,13 +203,16 @@
         <div class="pricing-column col-lg-4 col-md-6">
           <div class="card">
             <div class="card-header">
-              <h3>Alaska</h3>
+              <h3 class="student2">Student 2</h3>
             </div>
 
             <div class="card-body grid-container">
-              <button class="grid-item outOfSeat">Out of Seat</button>
-              <button class="grid-item talkedOutOfTurn">Talked Out of Turn</button>
-              <button class="grid-item staredAway">Stared Away</button>
+              <button class="grid-item outOfSeat" onclick="addOutOfSeat(alaska);">Out of Seat</button>
+              <p class="counter" id="outOfSeat-count-alaska">0</p>
+              <button class="grid-item talkedOutOfTurn" onclick="addTalkedOutOfTurn(alaska);">Talked Out of Turn</button>
+              <p class="counter" id="talkedOutOfTurn-count-alaska">0</p>
+              <button class="grid-item staredAway" onclick="addStaredAway(alaska);">Stared Away</button>
+              <p class="counter" id="staredAway-count-alaska">0</p>
               <button class="addBehaviour">+</button>
             </div>
 
@@ -200,13 +222,16 @@
         <div class="pricing-column col-lg-4 col-md-12">
           <div class="card">
             <div class="card-header">
-              <h3>Cristiano Ronaldo</h3>
+              <h3 class="student3">Student 3</h3>
             </div>
 
             <div class="card-body grid-container">
-              <button class="grid-item outOfSeat">Out of Seat</button>
-              <button class="grid-item talkedOutOfTurn">Talked Out of Turn</button>
-              <button class="grid-item staredAway">Stared Away</button>
+              <button class="grid-item outOfSeat" onclick="addOutOfSeat(cristianoRonaldo);">Out of Seat</button>
+              <p class="counter" id="outOfSeat-count-cristianoRonaldo">0</p>
+              <button class="grid-item talkedOutOfTurn" onclick="addTalkedOutOfTurn(cristianoRonaldo);">Talked Out of Turn</button>
+              <p class="counter" id="talkedOutOfTurn-count-cristianoRonaldo">0</p>
+              <button class="grid-item staredAway" onclick="addStaredAway(cristianoRonaldo);">Stared Away</button>
+              <p class="counter" id="staredAway-count-cristianoRonaldo">0</p>
               <button class="addBehaviour">+</button>
             </div>
 
@@ -221,7 +246,7 @@
         <div class="pricing-column col-lg-4 col-md-6">
           <div class="card">
             <div class="card-header">
-              <h3>Samuel L. Jackson</h3>
+              <h3 class="student1">Student 1</h3>
             </div>
 
             <div class="card-body">
@@ -236,7 +261,7 @@
         <div class="pricing-column col-lg-4 col-md-6">
           <div class="card">
             <div class="card-header">
-              <h3>Alaska</h3>
+              <h3 class="student2">Student 2</h3>
             </div>
 
             <div class="card-body">
@@ -251,7 +276,7 @@
         <div class="pricing-column col-lg-4 col-md-12">
           <div class="card">
             <div class="card-header">
-              <h3>Cristiano Ronaldo</h3>
+              <h3 class="student3">Student 3</h3>
             </div>
 
             <div class="card-body">
@@ -267,7 +292,6 @@
 
       <button class="backToHome" onclick="backToHome();">Back</button>
     </div>
-  </div>
   </div>
 
 
@@ -288,13 +312,16 @@
         <div class="pricing-column col-lg-4 col-md-6">
           <div class="card">
             <div class="card-header">
-              <h3>Soulja Boy</h3>
+              <h3 class="student1">Student 1</h3>
             </div>
 
             <div class="card-body grid-container">
-              <button class="grid-item outOfSeat">Out of Seat</button>
-              <button class="grid-item talkedOutOfTurn">Talked Out of Turn</button>
-              <button class="grid-item staredAway">Stared Away</button>
+              <button class="grid-item outOfSeat" onclick="addOutOfSeat(souljaBoy);">Out of Seat</button>
+              <p class="counter" id="outOfSeat-count-souljaBoy">0</p>
+              <button class="grid-item talkedOutOfTurn" onclick="addTalkedOutOfTurn(souljaBoy);">Talked Out of Turn</button>
+              <p class="counter" id="talkedOutOfTurn-count-souljaBoy">0</p>
+              <button class="grid-item staredAway" onclick="addStaredAway(souljaBoy);">Stared Away</button>
+              <p class="counter" id="staredAway-count-souljaBoy">0</p>
               <button class="addBehaviour">+</button>
             </div>
 
@@ -304,13 +331,16 @@
         <div class="pricing-column col-lg-4 col-md-6">
           <div class="card">
             <div class="card-header">
-              <h3>Tupac</h3>
+              <h3 class="student2">Student 2</h3>
             </div>
 
             <div class="card-body grid-container">
-              <button class="grid-item outOfSeat">Out of Seat</button>
-              <button class="grid-item talkedOutOfTurn">Talked Out of Turn</button>
-              <button class="grid-item staredAway">Stared Away</button>
+              <button class="grid-item outOfSeat" onclick="addOutOfSeat(tupac);">Out of Seat</button>
+              <p class="counter" id="outOfSeat-count-tupac">0</p>
+              <button class="grid-item talkedOutOfTurn" onclick="addTalkedOutOfTurn(tupac);">Talked Out of Turn</button>
+              <p class="counter" id="talkedOutOfTurn-count-tupac">0</p>
+              <button class="grid-item staredAway" onclick="addStaredAway(tupac);">Stared Away</button>
+              <p class="counter" id="staredAway-count-tupac">0</p>
               <button class="addBehaviour">+</button>
             </div>
 
@@ -320,13 +350,16 @@
         <div class="pricing-column col-lg-4 col-md-12">
           <div class="card">
             <div class="card-header">
-              <h3>Biggie</h3>
+              <h3 class="student3">Student 3</h3>
             </div>
 
             <div class="card-body grid-container">
-              <button class="grid-item outOfSeat">Out of Seat</button>
-              <button class="grid-item talkedOutOfTurn">Talked Out of Turn</button>
-              <button class="grid-item staredAway">Stared Away</button>
+              <button class="grid-item outOfSeat" onclick="addOutOfSeat(biggie);">Out of Seat</button>
+              <p class="counter" id="outOfSeat-count-biggie">0</p>
+              <button class="grid-item talkedOutOfTurn" onclick="addTalkedOutOfTurn(biggie);">Talked Out of Turn</button>
+              <p class="counter" id="talkedOutOfTurn-count-biggie">0</p>
+              <button class="grid-item staredAway" onclick="addStaredAway(biggie);">Stared Away</button>
+              <p class="counter" id="staredAway-count-biggie">0</p>
               <button class="addBehaviour">+</button>
             </div>
 
@@ -341,7 +374,7 @@
         <div class="pricing-column col-lg-4 col-md-6">
           <div class="card">
             <div class="card-header">
-              <h3>Soulja Boy</h3>
+              <h3 class="student1">Student 1</h3>
             </div>
 
             <div class="card-body">
@@ -356,7 +389,7 @@
         <div class="pricing-column col-lg-4 col-md-6">
           <div class="card">
             <div class="card-header">
-              <h3>Tupac</h3>
+              <h3 class="student2">Student 2</h3>
             </div>
 
             <div class="card-body">
@@ -368,10 +401,10 @@
           </div>
         </div>
 
-        <div class="pricing-column col-lg-4 col-md-12">
+        <div class="pricing-column col-lg-4 col-md-6">
           <div class="card">
             <div class="card-header">
-              <h3>Biggie</h3>
+              <h3 class="student3">Student 3</h3>
             </div>
 
             <div class="card-body">
@@ -387,7 +420,6 @@
       <button class="backToHome" onclick="backToHome();">Back</button>
     </div>
   </div>
-  </div>
 
   <div id="addClassroomPage" style="display: none;">
     <div class="container main-page-container">
@@ -397,7 +429,7 @@
     </div>
   </div>
 
-<!--   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
   <script src="client.js" charset="utf-8"></script>
 </body>
 
